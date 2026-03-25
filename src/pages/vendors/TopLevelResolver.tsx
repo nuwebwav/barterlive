@@ -9,12 +9,13 @@ import CountryPage from "@/pages/vendors/CountryPage";
  */
 const TopLevelResolver = () => {
   const { slug } = useParams<{ slug: string }>();
+  const normalizedSlug = (slug || "").toLowerCase().replace(/\s+/g, "-");
 
-  if (isCategory(slug || "")) {
+  if (isCategory(normalizedSlug)) {
     return <CategoryPage />;
   }
 
-  const country = findCountry(slug || "");
+  const country = findCountry(normalizedSlug);
   if (country) {
     return <CountryPage />;
   }

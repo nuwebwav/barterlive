@@ -296,26 +296,33 @@ export const countries: CountryData[] = [
 ];
 
 // Helper functions
+const normalizeSlug = (s: string) => s.toLowerCase().replace(/\s+/g, "-").trim();
+
 export function findCountry(slug: string) {
-  return countries.find((c) => c.slug === slug);
+  const norm = normalizeSlug(slug || "");
+  return countries.find((c) => c.slug === norm);
 }
 
 export function findState(countrySlug: string, stateSlug: string) {
   const country = findCountry(countrySlug);
-  return country?.states.find((s) => s.slug === stateSlug);
+  const normState = normalizeSlug(stateSlug || "");
+  return country?.states.find((s) => s.slug === normState);
 }
 
 export function findCity(countrySlug: string, stateSlug: string, citySlug: string) {
   const state = findState(countrySlug, stateSlug);
-  return state?.cities.find((c) => c.slug === citySlug);
+  const normCity = normalizeSlug(citySlug || "");
+  return state?.cities.find((c) => c.slug === normCity);
 }
 
 export function findCategory(slug: string) {
-  return categories.find((c) => c.slug === slug);
+  const norm = normalizeSlug(slug || "");
+  return categories.find((c) => c.slug === norm);
 }
 
 export function isCategory(slug: string) {
-  return categorySlugs.includes(slug);
+  const norm = normalizeSlug(slug || "");
+  return categorySlugs.includes(norm);
 }
 
 // Total pages count
