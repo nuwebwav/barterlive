@@ -4,7 +4,7 @@ import { ArrowRight, MapPin, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import SectionHeading from "@/components/SectionHeading";
 import SEOHead, { breadcrumbJsonLd } from "@/components/SEOHead";
-import { findCountry, findState, findCategory, countries } from "@/data/vendorData";
+import { findCountry, findState, findCategory, categories, countries } from "@/data/vendorData";
 import VendorBreadcrumb from "@/components/vendors/VendorBreadcrumb";
 
 const fadeUp = {
