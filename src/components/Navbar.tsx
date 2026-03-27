@@ -48,13 +48,13 @@ const Navbar = () => {
       </div>
 
       {/* Main nav */}
-      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b" style={{ height: '160px' }}>
+      <header className="sticky top-0 z-50 bg-background/95 backdrop-blur-md border-b" style={{ height: '100px' }}>
         <div className="container-narrow flex items-center justify-between px-4 sm:px-6 lg:px-8" style={{ height: '100%' }}>
           <Link to="/" className="flex items-center">
             <img
               src="/logo.png"
               alt="Barter Constructions"
-              style={{ height: '100%', width: 'auto', objectFit: 'contain' }}
+              style={{ height: '70px', width: 'auto', objectFit: 'contain' }}
             />
           </Link>
 

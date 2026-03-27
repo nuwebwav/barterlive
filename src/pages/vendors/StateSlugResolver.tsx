@@ -10,10 +10,10 @@ import CityPage from "@/pages/vendors/CityPage";
 const StateSlugResolver = () => {
   const { country, state, slug } = useParams<{ country: string; state: string; slug: string }>();
 
-  // Normalize slugs: lower case and replace spaces with hyphens
-  const normalizedCountry = (country || "").toLowerCase().replace(/\s+/g, "-");
-  const normalizedState = (state || "").toLowerCase().replace(/\s+/g, "-");
-  const normalizedSlug = (slug || "").toLowerCase().replace(/\s+/g, "-");
+  // Normalize slugs using the central helper
+  const normalizedCountry = (country || "");
+  const normalizedState = (state || "");
+  const normalizedSlug = (slug || "");
 
   if (isCategory(normalizedSlug)) {
     return <StateCategoryPage />;

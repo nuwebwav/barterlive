@@ -11,7 +11,7 @@ const CityCategoryPage = () => {
   const { country, state, city, category } = useParams<{ country: string; state: string; city: string; category: string }>();
   const countryData = findCountry(country || "");
   const stateData = findState(country || "", state || "");
-  const cityData = findCity(country || "", state || "");
+  const cityData = findCity(country || "", state || "", city || "");
   const cat = findCategory(category || "");
   if (!countryData || !stateData || !cityData || !cat) return <Navigate to="/vendors" replace />;
 
@@ -57,7 +57,7 @@ const CityCategoryPage = () => {
           <div className="flex flex-col lg:flex-row gap-10">
             {/* Sidebar: Material Suppliers (20 Categories) */}
             <aside className="lg:w-1/4 shrink-0">
-              <div className="sticky top-28 bg-card border rounded-2xl p-6 shadow-sm transition-all hover:shadow-md">
+              <div className="sticky top-36 bg-card border rounded-2xl p-6 shadow-sm transition-all hover:shadow-md">
                 <div className="flex items-center gap-2 mb-6 border-b pb-4">
                   <div className="w-2 h-6 bg-accent rounded-full" />
                   <h2 className="font-heading font-bold text-lg text-foreground uppercase tracking-tight">Suppliers</h2>
